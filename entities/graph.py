@@ -6,6 +6,7 @@ import copy
 START_REPRESENTATION = 2
 END_REPRESENTATION = 3
 OBSTACLES_REPRESENTATION = 1
+PATH_REPRESENTATION = 4
 
 
 class Graph:
@@ -40,6 +41,11 @@ class Graph:
         node_a = self.nodes[node_a_index]
         node_b = self.nodes[node_b_index]
         return np.sqrt((node_b.position_x - node_a.position_x) ** 2 + (node_b.position_y - node_a.position_y) ** 2)
+
+    def set_path(self, node_index_list: list):
+        for node_index in node_index_list:
+            node = self.nodes[node_index]
+            node.representation = PATH_REPRESENTATION
 
     def __repr__(self):
         string = ""
