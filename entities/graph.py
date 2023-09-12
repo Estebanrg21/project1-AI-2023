@@ -1,3 +1,5 @@
+import numpy as np
+
 from entities.node import Node
 import copy
 
@@ -33,6 +35,11 @@ class Graph:
                     self.end = node
                     break
         return self.end
+
+    def heuristic(self, node_a_index: int, node_b_index: int):
+        node_a = self.nodes[node_a_index]
+        node_b = self.nodes[node_b_index]
+        return np.sqrt((node_b.position_x - node_a.position_x) ** 2 + (node_b.position_y - node_a.position_y) ** 2)
 
     def __repr__(self):
         string = ""

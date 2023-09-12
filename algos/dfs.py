@@ -19,5 +19,4 @@ def dfs(graph: Graph, start_index: int, end_index: int):
                     if not visited[neighbor_index]:
                         stack.append(neighbor_index)
                         predecessor[neighbor_index] = u
-    print(predecessor)
     interpret_result(predecessor, start_index, end_index, graph)
