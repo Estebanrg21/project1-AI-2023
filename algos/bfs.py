@@ -26,4 +26,4 @@ def bfs(graph: Graph, start_index: int, end_index: int):
                     # else if 1 weight edge, store at back of deque
                     # so that vertices will be processed in a sorted increasing weight order
                     q.appendleft(neighbor_index) if weight == 0 else q.append(neighbor_index)
-    return dist, predecessor, interpret_result(predecessor, start_index, end_index, graph)
+    return interpret_result(predecessor, start_index, end_index, graph)
