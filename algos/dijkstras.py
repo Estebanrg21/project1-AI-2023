@@ -1,6 +1,7 @@
 from queue import PriorityQueue
 
 from entities.graph import Graph
+from util.util import interpret_result
 
 
 def dijkstra(graph: Graph, start_index: int, end_index: int):
@@ -22,15 +23,3 @@ def dijkstra(graph: Graph, start_index: int, end_index: int):
                     predecessor[neighbor_index] = current_vertex_index
                     pq.put((alt, neighbor_index))
     return interpret_result(predecessor, start_index, end_index, graph)
-
-
-def interpret_result(prev, start_index, end_index, graph):
-    path = []
-    node_index = end_index
-    while node_index != start_index:
-        if node_index is None:
-            return None
-        path.append(node_index)
-        node_index = prev[node_index]
-    path.append(start_index)
-    return path
