@@ -4,6 +4,7 @@ from entities.graph import Graph
 from util.util import interpret_result
 
 
+# pseudocode: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Using_a_priority_queue
 def dijkstra(graph: Graph, start_index: int, end_index: int):
     dist = [float('inf') for i in range(graph.length)]
     predecessor = [None for i in range(graph.length)]

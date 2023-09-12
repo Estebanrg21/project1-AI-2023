@@ -2,6 +2,7 @@ from entities.graph import Graph
 from util.util import interpret_result
 
 
+# pseudocode: https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 def bellman_ford(graph: Graph, start_index: int, end_index: int):
     dist = [float('inf') for i in range(graph.length)]
     predecessor = [None for i in range(graph.length)]
@@ -43,4 +44,3 @@ def bellman_ford(graph: Graph, start_index: int, end_index: int):
                         __current_vertex = predecessor[graph.nodes.index(__current_vertex)]
                     return None
     return interpret_result(predecessor, start_index, end_index, graph)
-
